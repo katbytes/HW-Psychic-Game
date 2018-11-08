@@ -15,6 +15,8 @@
         <p id="wins-text"></p>
         <p id="losses-text"></p>
         <p id="guesses-text"></p>
+        <p id="sofar-text"></p>
+
 
     </div>
     <script>
@@ -32,6 +34,8 @@
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
         var guessesText = document.getElementById("guesses-text");
+        var sofarText = document.getElementById("sofar-text");
+
 
         // This function is run whenever the user presses a key.
         document.onkeyup = function (event) {
@@ -47,7 +51,7 @@
             // If the user picks the same letter that the computer picks the user wins and counts +1.
             // If the user does not pick the computers picks then decrement the guesses.
             // If the user does not pick the correct letters then.
-            // User guesses in round = 9.
+            // User guesses in round of 9.
             // If the user or computer wins or loses, reset and a new guess is picked.
             if (alphabet.indexOf(userGuess) > -1) {
 
@@ -72,9 +76,10 @@
                 directionsText.textContent = "";
 
                 // Display the user and computer guesses, and wins/losses/guesses.
-                winsText.textContent = "wins: " + wins;
-                lossesText.textContent = "losses: " + losses;
-                guessesText.textContent = "number of guesses: " + numGuesses;
+                winsText.textContent = "Wins: " + wins;
+                lossesText.textContent = "Losses: " + losses;
+                guessesText.textContent = "Guesses Left: " + numGuesses;
+                sofarText.textContent = "Your Guesses so far: ";
             }
         };
     </script>
